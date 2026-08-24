@@ -1,0 +1,16 @@
+{
+  "name": "parking-system",
+  "version": "1.0.0",
+  "description": "Vehicle parking lot management system (entry/exit control, fee calculation, business rule validation). Runs as a static web page (open index.html with Live Server).",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/parkingService.test.js"
+  },
+  "keywords": ["parking", "git", "github", "business-rules", "javascript"],
+  "author": "TechSoft S.A.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
