@@ -13,10 +13,10 @@
     <header class="topbar">
       <div class="brand">
         <span class="brand-name">TechSoft</span>
-        <span class="brand-sub">Parking Control</span>
+        <span class="brand-sub">Control Parqueadero</span>
       </div>
       <div class="availability-board">
-        <span class="board-label">Spots</span>
+        <span class="board-label">Espacios</span>
         <span class="board-value" id="board-value">-- / --</span>
         <span class="board-status" id="board-status">—</span>
       </div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="ticket">
-          <p class="ticket-label">Last plate processed</p>
+          <p class="ticket-label">Ultima placa ingresada</p>
           <p class="ticket-plate" id="ticket-plate">— — —</p>
           <p class="ticket-detail" id="ticket-detail"></p>
         </div>
@@ -40,36 +40,36 @@
 
       <section class="control-panel">
         <div class="tabs">
-          <button type="button" class="tab active" data-tab="entry">Register Entry</button>
-          <button type="button" class="tab" data-tab="exit">Register Exit</button>
+          <button type="button" class="tab active" data-tab="entry">Registro entrada</button>
+          <button type="button" class="tab" data-tab="exit">Registro salida</button>
         </div>
 
         <form id="entry-form" class="tab-panel active">
           <label for="entry-plate">License plate</label>
           <input id="entry-plate" name="entry-plate" type="text" placeholder="e.g. ABC123" autocomplete="off" />
-          <button type="submit" class="btn btn--primary">Register Entry</button>
+          <button type="submit" class="btn btn--primary">Registrar Entrada</button>
         </form>
 
         <form id="exit-form" class="tab-panel">
-          <label for="exit-plate">License plate</label>
+          <label for="exit-plate">Ingresar Placa</label>
           <input id="exit-plate" name="exit-plate" type="text" placeholder="e.g. ABC123" autocomplete="off" />
-          <button type="submit" class="btn btn--primary">Register Exit</button>
+          <button type="submit" class="btn btn--primary">Registrar salida</button>
         </form>
 
         <div id="message-box" class="message" role="status" aria-live="polite"></div>
 
         <div class="table-wrap">
           <div class="table-head">
-            <h2>Parked vehicles</h2>
-            <button type="button" id="refresh-btn" class="btn btn--ghost">Refresh</button>
+            <h2>Vehiculos parqueados</h2>
+            <button type="button" id="refresh-btn" class="btn btn--ghost">Refrescar</button>
           </div>
           <table id="parked-table">
             <thead>
-              <tr><th>Plate</th><th>Entry time</th></tr>
+              <tr><th>Plate</th><th>Hora entrada</th></tr>
             </thead>
             <tbody id="parked-tbody"></tbody>
           </table>
-          <p id="empty-state" class="empty-state">No vehicles currently parked.</p>
+          <p id="empty-state" class="empty-state">No hay vehiculos actualmente parqueados</p>
         </div>
       </section>
     </main>
