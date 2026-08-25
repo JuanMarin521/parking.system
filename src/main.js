@@ -3,8 +3,8 @@ import ParkingService from './services/parkingService.js';
 import ParkingUI from './ui/parkingUI.js';
 
 // Configuración inicial del sistema: capacidad total y tarifa por hora.
-const PARKING_CAPACITY = 5;
-const RATE_PER_HOUR = 2000;
+const PARKING_CAPACITY = 20;
+const RATE_PER_HOUR = 2500;
 
 const repository = new VehicleRepository();
 const parkingService = new ParkingService(repository, PARKING_CAPACITY, RATE_PER_HOUR);

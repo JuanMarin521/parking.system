@@ -4,7 +4,7 @@
 
 /**
  * Calcula la cantidad de horas a facturar entre la hora de entrada y la de salida.
- * Regla aplicada: toda hora iniciada se cobra completa (regla común en parqueaderos).
+ * Regla aplicada: toda hora iniciada se cobra completa
  * @param {Date} entryTime - Hora de entrada del vehículo.
  * @param {Date} exitTime - Hora de salida del vehículo.
  * @returns {number} Total de horas facturables (mínimo 1).
