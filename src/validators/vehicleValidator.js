@@ -12,24 +12,24 @@ const LICENSE_PLATE_PATTERN = /^[A-Z0-9]{3,8}$/;
 function validateLicensePlate(licensePlate) {
   // Campo obligatorio: no puede estar vacío, nulo o indefinido.
   if (licensePlate === undefined || licensePlate === null || licensePlate === '') {
-    throw new ValidationError('License plate is required.');
+    throw new ValidationError('La placa es requerida.');
   }
 
   // Valor no numérico esperado como texto: se valida el tipo de dato.
   if (typeof licensePlate !== 'string') {
-    throw new ValidationError('License plate must be a text value.');
+    throw new ValidationError('La placa debe de ser un texto valido.');
   }
 
   const normalizedPlate = licensePlate.trim().toUpperCase();
 
   if (normalizedPlate === '') {
-    throw new ValidationError('License plate cannot be empty or only spaces.');
+    throw new ValidationError('La placa no puede ser vacia o con solo espacios blancos.');
   }
 
   // Rango/formato permitido: solo letras y números, entre 3 y 8 caracteres.
   if (!LICENSE_PLATE_PATTERN.test(normalizedPlate)) {
     throw new ValidationError(
-      'License plate must contain only letters and/or numbers (3 to 8 characters).'
+      'La placa solo debed e contener letras y/o numeros (3 a 8 caracteres).'
     );
   }
 
@@ -45,23 +45,23 @@ function validateLicensePlate(licensePlate) {
 function validateCapacity(capacity) {
   // Campo obligatorio.
   if (capacity === undefined || capacity === null || capacity === '') {
-    throw new ValidationError('Parking capacity is required.');
+    throw new ValidationError('La capacidad el parqueadero es requerida.');
   }
 
   const numericCapacity = Number(capacity);
 
   // Valor no numérico: si no se puede convertir a número, se rechaza.
   if (Number.isNaN(numericCapacity)) {
-    throw new ValidationError('Parking capacity must be a numeric value.');
+    throw new ValidationError('La capacidad del parqueadero debe de ser un numero.');
   }
 
   // Rango permitido: debe ser un entero positivo.
   if (!Number.isInteger(numericCapacity) || numericCapacity <= 0) {
-    throw new ValidationError('Parking capacity must be a positive integer (greater than 0).');
+    throw new ValidationError('La capacidad del parqueadero debe de ser un numero entero (mayor a cero).');
   }
 
-  if (numericCapacity > 10000) {
-    throw new ValidationError('Parking capacity exceeds the allowed maximum (10000).');
+  if (numericCapacity > 1000) {
+    throw new ValidationError('capacidad del parqueadero supera la permitida (1000)');
   }
 
   return numericCapacity;
@@ -74,12 +74,12 @@ function validateCapacity(capacity) {
  */
 function validateExitTime(entryTime, exitTime) {
   if (!(exitTime instanceof Date) || Number.isNaN(exitTime.getTime())) {
-    throw new ValidationError('Exit time must be a valid date.');
+    throw new ValidationError('La salida debe de ser un tiempo valido');
   }
 
   // Regla de negocio de tiempos: la salida nunca puede ser anterior a la entrada.
   if (exitTime.getTime() < entryTime.getTime()) {
-    throw new ValidationError('Exit time cannot be earlier than entry time.');
+    throw new ValidationError('La hora de salida no puede ser anterior a la de entrada');
   }
 }
 
