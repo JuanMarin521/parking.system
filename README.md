@@ -66,22 +66,6 @@ validación y de negocio, y capturadas en la capa de interfaz (`ui`), la
 cual muestra un mensaje claro al usuario en pantalla en lugar de dejar que
 la aplicación falle de forma inesperada.
 
-## Cómo ejecutarlo en Visual Studio Code con Live Server
-
-
-
-Ejecuta los siguientes comandos desde la carpeta `parking-system`:
-
-```bash
-git init
-git add .
-git commit -m "feat: initial parking lot management system"
-
-git branch -M main
-git remote add origin https://github.com/<tu-usuario>/parking-system.git
-git push -u origin main
-```
-
 ## Configuración
 
 La configuración inicial se define en `src/main.js`:
