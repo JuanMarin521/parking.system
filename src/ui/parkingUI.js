@@ -52,7 +52,7 @@ class ParkingUI {
 
     try {
       const vehicle = this.parkingService.registerEntry(plate);
-      this.showMessage(`Entry registered successfully for plate "${vehicle.licensePlate}".`, 'success');
+      this.showMessage(`Registro de ingreso exitoso para el vehiculo con placa "${vehicle.licensePlate}".`, 'success');
       this.updateTicket(vehicle.licensePlate, 'Entry registered');
       this.animateGate('open');
       this.entryForm.reset();
@@ -72,7 +72,7 @@ class ParkingUI {
       const receipt = this.parkingService.registerExit(plate);
       const detail = `${receipt.totalHours}h · $${receipt.amountToPay}`;
       this.showMessage(
-        `Exit registered for plate "${receipt.licensePlate}". Total: $${receipt.amountToPay} (${receipt.totalHours}h billed).`,
+        `Registro de salida exitoso para el vehiculo con placa "${receipt.licensePlate}". Total: $${receipt.amountToPay} (${receipt.totalHours}h facturada).`,
         'success'
       );
       this.updateTicket(receipt.licensePlate, detail);
@@ -153,7 +153,7 @@ class ParkingUI {
    */
   handleError(error) {
     if (error instanceof ValidationError) {
-      this.showMessage(`Validation error: ${error.message}`, 'error');
+      this.showMessage(`Error de validacion: ${error.message}`, 'error');
     } else if (error instanceof BusinessRuleError) {
       this.showMessage(`Business rule violation: ${error.message}`, 'error');
     } else if (error instanceof NotFoundError) {
